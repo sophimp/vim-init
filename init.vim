@@ -43,11 +43,16 @@ LoadScript init/init-tabsize.vim
 " 插件加载
 LoadScript init/init-plugins.vim
 
+" 日志等工具
+LoadScript init/tools.vim
+
 " 界面样式
 LoadScript init/init-style.vim
 
 " 自定义按键
 LoadScript init/init-keymaps.vim
 
+" 扩充定制的一些快捷键
+LoadScript init/viminit.vim
 
 

@@ -41,6 +41,9 @@ set ttimeoutlen=50
 " 显示光标位置
 set ruler
 
+" 设置相对行号
+set number
+set relativenumber
 
 "----------------------------------------------------------------------
 " 搜索设置

@@ -221,7 +221,34 @@ elseif has('nvim')
 	tnoremap <m-q> <c-\><c-n>
 endif
 
+"----------------------------------------------------------------------
+" window control
+" 需要vinegar 插件，放在 plugin/vinegar.vim
+"----------------------------------------------------------------------
+noremap <silent><space>= :resize +3<cr>
+noremap <silent><space>- :resize -3<cr>
+noremap <silent><space>, :vertical resize -3<cr>
+noremap <silent><space>. :vertical resize +3<cr>
 
+nnoremap <silent><c-w><c-e> :ExpSwitch edit<cr>
+nnoremap <silent><c-w>e :ExpSwitch edit<cr>
+nnoremap <silent><c-w>m :ExpSwitch vs<cr>
+nnoremap <silent><c-w>M :ExpSwitch tabedit<cr>
+
+noremap <silent><space>hh :nohl<cr>
+noremap <silent><bs> :nohl<cr>:redraw!<cr>
+noremap <silent><tab>, :call Tab_MoveLeft()<cr>
+noremap <silent><tab>. :call Tab_MoveRight()<cr>
+noremap <silent><tab>6 :VinegarOpen leftabove vs<cr>
+noremap <silent><tab>7 :VinegarOpen vs<cr>
+noremap <silent><tab>8 :VinegarOpen belowright sp<cr>
+noremap <silent><tab>9 :VinegarOpen tabedit<cr>
+noremap <silent><tab>0 :exe "NERDTree ".fnameescape(expand("%:p:h"))<cr>
+noremap <silent><tab>y :exe "NERDTree ".fnameescape(asclib#path#get_root("%"))<cr>
+noremap <silent><tab>g <c-w>p
+
+noremap <silent><space>ha :GuiSignRemove
+			\ errormarker_error errormarker_warning<cr>
 
 "----------------------------------------------------------------------
 " 编译运行 C/C++ 项目
@@ -330,4 +357,43 @@ else
 				\ '<root>' <cr>
 endif
 
+"----------------------------------------------------------------------
+" 快捷编辑配置文件
+"----------------------------------------------------------------------
+noremap <space>hp :FileSwitch tabe ~/.vim/vim/init/init-plugins.vim<cr>
+" noremap <space>he :call Show_Explore()<cr>
+noremap <space>hb :FileSwitch tabe ~/.vim/vim/init/init-basic.vim<cr>
+noremap <space>hk :FileSwitch tabe ~/.vim/vim/init/init-keymaps.vim<cr>
+noremap <space>h; :call asclib#nextcloud_sync()<cr>
 
+if (!has('nvim')) && (has('win32') || has('win64')) 
+	noremap <space>hr :FileSwitch tabe ~/_vimrc<cr>
+elseif !has('nvim')
+	noremap <space>hr :FileSwitch tabe ~/.vimrc<cr>
+else 
+	noremap <space>hr :FileSwitch tabe ~/.config/nvim/init.vim<cr>
+endif
+
+let s:filename = expand('<sfile>:p')
+exec 'nnoremap <space>hk :FileSwitch tabe '.fnameescape(s:filename).'<cr>'
+let s:skywind = fnamemodify(s:filename, ':h:h'). '/skywind.vim'
+exec 'nnoremap <space>hs :FileSwitch tabe '.fnameescape(s:skywind).'<cr>'
+let s:bundle = fnamemodify(s:filename, ':h:h'). '/bundle.vim'
+exec 'nnoremap <space>hv :FileSwitch tabe '.fnameescape(s:bundle).'<cr>'
+let s:asclib = fnamemodify(s:filename, ':h:h'). '/autoload/asclib.vim'
+exec 'nnoremap <space>hc :FileSwitch tabe '.fnameescape(s:asclib).'<cr>'
+let s:auxlib = fnamemodify(s:filename, ':h:h'). '/autoload/auxlib.vim'
+exec 'nnoremap <space>hu :FileSwitch tabe '.fnameescape(s:auxlib).'<cr>'
+let s:tasks = fnamemodify(s:filename, ':h:h'). '/tasks.ini'
+exec 'nnoremap <space>ht :FileSwitch tabe '.fnameescape(s:tasks).'<cr>'
+let s:nvimrc = expand("~/.config/nvim/init.vim")
+if has('win32') || has('win16') || has('win95') || has('win64')
+|   let s:nvimrc = expand("~/AppData/Local/nvim/init.vim")
+endif
+exec 'nnoremap <space>hn :FileSwitch tabe '.fnameescape(s:nvimrc).'<cr>'
+
+"----------------------------------------------------------------------
+" 插入时间
+"----------------------------------------------------------------------
+nnoremap <space>d "=strftime("%c %A")<cr>p
+nnoremap <space>tm "=strftime("%H:%M")<cr>p
