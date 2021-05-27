@@ -25,8 +25,11 @@ set signcolumn=yes
 " 总是显示标签栏
 set showtabline=2
 
+" 设置分隔符可视
+" set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
+
 " 设置显示制表符等隐藏字符
-set list
+set nolist
 
 " 右下角显示命令
 set showcmd
