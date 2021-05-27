@@ -13,37 +13,37 @@
 
 
 "----------------------------------------------------------------------
-" core initialize
+" core initialize 放在init-basic中了
 "----------------------------------------------------------------------
-set nocompatible
+" set nocompatible
 
-set backspace=eol,start,indent
-set autoindent
-set cindent
-set winaltkeys=no
-set nowrap
-set wildignore=*.swp,*.bak,*.pyc,*.obj,*.o,*.class
-set ttimeout
-set ttimeoutlen=30
-set cmdheight=1
-set ruler
-set nopaste
-set display=lastline
+" set backspace=eol,start,indent
+" set autoindent
+" set cindent
+" set winaltkeys=no
+" set nowrap
+" set wildignore=*.swp,*.bak,*.pyc,*.obj,*.o,*.class
+" set ttimeout
+" set ttimeoutlen=30
+" set cmdheight=1
+" set ruler
+" set nopaste
+" set display=lastline
 
-set shiftwidth=4
-set softtabstop=4
-set noexpandtab
-set tabstop=4
+" set shiftwidth=4
+" set softtabstop=4
+" set noexpandtab
+" set tabstop=4
 
-if has('multi_byte')
-	set encoding=utf-8
-	set fileencoding=utf-8
-	set fileencodings=ucs-bom,utf-8,gbk,gb18030,big5,euc-jp,latin1
-endif
+" if has('multi_byte')
+" 	set encoding=utf-8
+" 	set fileencoding=utf-8
+" 	set fileencodings=ucs-bom,utf-8,gbk,gb18030,big5,euc-jp,latin1
+" endif
 
-set formatoptions+=m
-set formatoptions+=B
-set showcmd
+" set formatoptions+=m
+" set formatoptions+=B
+" set showcmd
 
 
 "----------------------------------------------------------------------
@@ -208,7 +208,7 @@ endif
 set scrolloff=2
 set showmatch
 set matchtime=3
-set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
+"set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 
 " window management
 noremap <tab>h <c-w>h
