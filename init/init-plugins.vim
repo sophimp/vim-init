@@ -277,6 +277,9 @@ if index(g:bundle_group, 'filetypes') >= 0
 
 	" vim org-mode 
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
+
+	" markdown
+	Plug 'plasticboy/vim-markdown'
 endif
 
 
