@@ -21,7 +21,7 @@ set nocompatible
 set bs=eol,start,indent
 
 " 自动缩进
-set autoindent
+"set autoindent
 
 " 打开 C/C++ 语言缩进优化
 set cindent
