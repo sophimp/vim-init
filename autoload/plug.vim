@@ -167,7 +167,8 @@ function! plug#begin(...)
   let g:plugs = {}
   let g:plugs_order = []
   let s:triggers = {}
-  let g:plug_url_format = get(g:, 'plug_url_format', 'https://hub.fastgit.org/%s.git')
+  "let g:plug_url_format = get(g:, 'plug_url_format', 'https://hub.fastgit.org/%s.git')
+  let g:plug_url_format = get(g:, 'plug_url_format', 'git@github.com:%s.git')
 
   call s:define_commands()
   return 1
