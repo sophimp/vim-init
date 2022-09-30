@@ -395,5 +395,5 @@ exec 'nnoremap <space>hn :FileSwitch tabe '.fnameescape(s:nvimrc).'<cr>'
 "----------------------------------------------------------------------
 " 插入时间
 "----------------------------------------------------------------------
-nnoremap <space>d "=strftime("%c %A")<cr>p
+nnoremap <space>d "=strftime("%Y-%m-%d %H-%M")<cr>p
 nnoremap <space>tm "=strftime("%H:%M")<cr>pa<space>
